@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="JobController">
+    <h3>Job List</h3>
+     
+     <table class="table table-striped">
+       <thead>
+            <tr>
+                <th>Job Designation</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Job Description</th>
+                <th> Location</th>
+     </tr>
+     </thead>
+       <tbody>
+           <tr ng-repeat="job in JobData">
+              <td><a>{{job.jobDesignation}}</a></td>
+              <td><a>{{job.company}}</a></td>
+              <td><a>{{job.salary</a></td>
+              <td><a>{{job.jobDescription}}</a></td>
+              <td><a>{{job.location}}</a></td>
+             <td><a href="#/getJob/{{job.id}}">
+                 <span class="glyphicon glyphicon-info-sign">View</span>
+             
+             </a>
+              </tr>
+         </tbody>
+     
+     </table>
+
+</div>
+
+</body>
+</html>

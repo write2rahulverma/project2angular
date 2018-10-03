@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Collab</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.mim.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     
+       <script src="assets/js/jquery.min.js"></script>
+       <script src="assets/js/bootstrap.min.js"></script>
+       <script src="assets/js/angular.min.js"></script>
+       <script src="assets/js/angular-route.js"></script>
+       <script src="assets/js/angular-cookies.js"></script>
+       <script src="assets/js/mycode.js"></script>
+       <script src="c_user/UserController.js"></script>
+       <script src="c_forum/ForumController.js"></script>
+       <script src="c_blog/BlogController.js"></script>
+       
+       <link rel="stylesheet" href="assets/css/">
+</head>
+<body ng-app="myApp">
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+ <a class="navbar-brand" href="#!"><img src="" style="height:70px;width:120px;position:relative;top:-14px;"/></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    
+       <div class="collapse navbar-collapse" id="navbarCollapse">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+             <li class="nav-item" ng-show="currentUser.role=='USER'||currentUser.role=='ADMIN'">
+              <a class="nav-link" href="#job">Job</a></li>
+                 
+                 <li class="nav-item" ng-hide="currentUser.role=='Role_User' ||currentUser.role=='Role_Admin'">
+                 <a class="nav-link" href="#about">About Us</a> </li>
+                   <li class="nav-item" ng-hide="currentUser.role=='Role_User' ||currentUser.role=='Role_Admin'">
+                 <a class="nav-link" href="#contact">Contact Us</a> </li>
+                 
+                  <li class="nav-item" ng-show="currentUser.role=='USER'||currentUser.role=='ADMIN'">
+              <a class="nav-link" href="#chat">Chat</a></li>
+              
+                   <li class="nav-item" ng-show="currentUser.role=='USER'||currentUser.role=='ADMIN'">
+              <a class="nav-link" href="#login">
+                 <span class="glyphicon glyphicon-log-in"></span>Login
+              </a></li>
+              
+              <li class="nav-item" ng-show="currentUser.role=='USER'||currentUser.role=='ADMIN'">
+              <a class="nav-link" href="#register">
+                 <span class="glyphicon glyphicon-user"></span>Register
+              </a></li>
+              
+               <!--  <li class="nav-item dropdown" ng-show="currentUser=='USER'||currentUser='ADMIN">
+                 <a class="nav-link dropdown-toggle" href="#" id="friend" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Friend</a>
+                    <div class="dropdown-menu" aria-labelledby="friend">
+                     <a class="dropdown-item" href="#friend">Friends</a>
+                     <a class="dropdown-item" href="#suggestedFriend">Suggested Friend</a>
+                      <a class="dropdown-item" href="#pendingFriend">Pending Friend Request</a>
+                    </div>
+                    </li> -->
+                    
+                     <li class="nav-item dropdown" ng-show="currentUser=='USER'||currentUser='ADMIN">
+                 <a class="nav-link dropdown-toggle" href="#" id="blog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                    <div class="dropdown-menu" aria-labelledby="blog">
+                     <a class="dropdown-item" href="#blog">Show Blog</a>
+                     <a class="dropdown-item" href="#addBlog">Add Blog</a>
+                      <a class="dropdown-item" href="#updateBlog">Update Blog</a>
+                    </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown" ng-show="currentUser=='USER'||currentUser='ADMIN">
+                 <a class="nav-link dropdown-toggle" href="#" id="forum" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Forum</a>
+                    <div class="dropdown-menu" aria-labelledby="forum">
+                     <a class="dropdown-item" href="#blog">Show Forum</a>
+                     <a class="dropdown-item" href="#addForum">Add Forum</a>
+                      <a class="dropdown-item" href="#updateForum">Update Forum</a>
+                    </div>
+                    </li>
+              
+           </ul>
+       </div>
+ </nav>
+       
+       <br/>
+       
+       <!-- Content -->
+      <div style="min-height:550px;" ng-view></div>
+      
+      <!-- Footer -->
+      <footer>
+		<div class="container-fluid" style="background-color:#09496d;height:40px;color:white;text-align:center;padding:10px; position:fixed;bottom:0px; width:100%;" >
+		   <span>&copy; Copyright 2018:MyCollaboration.com</span>
+          
+          <a href="http://www.facebook.com" class="fa fa-facebook" style="font-size:20px; color=#d6e5fc"></a>
+            <a href="http://www.twitter.com" class="fa fa-twitter" style="font-size:20px;  color=##1DA1F2"></a>
+            <a href=" https://www.instagram.com" class="fa fa-instagram" style="font-size:20px;  color=#262626"></a>
+       </div>
+       </footer>
+</body>
+</html>

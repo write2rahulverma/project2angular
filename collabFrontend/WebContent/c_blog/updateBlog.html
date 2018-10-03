@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Update Blog</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	rel="stylesheet">
+	
+	<style>
+.btn {
+	background-color: Brown;
+	border: none;
+	color: black;
+	padding: 10px 15px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: blue;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#forum-box {
+	position: relative;
+	margin: 5% auto;
+	width: 700px;
+	height: auto;
+	min-hieght: 500px;
+	border-radius: 2px;
+	box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+	background-color: rgb(68, 68, 68);
+}
+</style>
+</head>
+<body ng-app="myApp">
+
+	<div class="container-fluid" ng-controller="BlogController"
+		id="forum-box">
+		<div class="row">
+			<div class="col-md-12">
+				<form id="blogform" role="form" method="post">
+
+					<h3>Update Blogs</h3>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>BlogName</th>
+								<th>BlogContent</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="blog in blogData">
+								<td><input id="blog" name="blogName" type="text"
+									placeholder="Blog" ng-model="blog.blogName"
+									class="form-control input-md"></td>
+									<td><textarea class="form-control" id="blogContent" placeholder="Blog Content" ng-model="blog.blogContent" name="blogContent"></textarea>
+									</td>
+									<td>
+									<input type="submit" class="btn btn-primary" value="EDIT BLOG" ng-click="updateBog(blog.blogId)" />
+									<input type="submit" class="btn btn-primary" value="DELETE BLOG" ng-click="deleteBog(blog.blogId)" />
+									</td>
+						     </tr>
+						</tbody>
+					</table>
+
+				</form>
+
+
+			</div>
+
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="c_blog/BlogController.js"></script>
+	
+	<script
+		src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-cookies.js"></script>
+	
+</body>
+</html>

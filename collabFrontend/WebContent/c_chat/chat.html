@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Chat</title>
+
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	color: #222;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 300;
+	background: url();
+}
+
+#chat-box {
+	margin-top:-134px;
+	margin-right: 350px;
+	position: relative;
+	width: 600px;
+	height: 520px;
+	border-radius: 2px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	overflow: auto;
+	float: left;
+	bottom: 0px;
+	background: rgb(68, 68, 68);
+}
+
+#btn {
+	width: 180px;
+	background: rgba(134, 41, 173, 0.8);
+	border: none;
+	box-shadow: 1px 3px 8px #000;
+	text-shadow: 1px 3px 3px #000;
+	font-size: 18px;
+	margin-top: 5px;
+}
+
+#btn:hover {
+	width: 180px;
+	background: rgba(134, 41, 173, 0.8);
+	border: none;
+	box-shadow: 1px 3px 8px #000;
+}
+</style>
+</head>
+<body>
+	<h1
+		style="float: left; padding-left: 50px; padding-top: 100px; font-size: 90px; color: aliceblue; text-shadow: 1px 1px 23px #333;">
+		Lets make some<br> Talk ...
+	</h1>
+
+	<div id="chat-box" ng-controller="ChatController">
+		<form ng-submit="addMessage()" name="chatMsg">
+			<div class="col-sm-12">
+				<div class="row" style="background: coral; color: #80ced6"></div>
+				<div class="col-sm-9 form-group">
+					<label align="center">Message<input type="text"
+						class="form-control" placeholder="enter your message here"
+						style="width: 500px" ng-model="message">
+					</label>
+
+					<button id="btn" class="btn btn-primary"
+						ng-disabled="message.length>250||message.length==0">Send</button>
+					<span style="float: right; margin-top: 5px;">Maximum <span
+						classs="count" ng-bind="max - message.length"> 250 </span></span>
+					
+
+				</div>
+
+
+			</div>
+
+
+		</form>
+
+
+	</div>
+
+</body>
+</html>

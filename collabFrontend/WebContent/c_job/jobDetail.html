@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>job Details</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="c_blog/JobController.js"></script>
+  <script src="assets/js/mycode.js"></script>
+ 
+ <style>
+.btn {
+	background-color: Brown;
+	border: none;
+	color: black;
+	padding: 10px 15px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: blue;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#forum-box {
+	position: relative;
+	margin: 5% auto;
+	width: 700px;
+	height: auto;
+	min-hieght: 500px;
+	border-radius: 2px;
+	box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+	background-color: rgb(68, 68, 68);
+}
+</style>
+</head>
+<body ng-app="myApp">
+<div class="container-fluid" id="forum-box" ng-controller="JobController">
+     <h3>Job Details</h3>
+    <div class="panel panel-heading">
+    <b>Job Designation</b>:{{Job.jobDesignation}}<br/>
+    <div class="panel-body">
+    JobDescription:{{job.jobDescription}}<br/>
+    Company:{{job.company}}<br/>
+    Location:{{job.location}}<br/>
+    Salary:{{job.location}}<br/>
+    Last Date Apply:{{job.lastDateApply| date:'medium'}}<br/>    
+    </div>
+    </div>
+  <a href="#/getAllJobs">Back</a>  
+</div>
+
+
+</body>
+</html>
